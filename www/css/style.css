@@ -1,1 +1,5 @@
-/* Empty. Add your own CSS if you like */
+
+/* h2 belongs to list - might need to be deleted? */
+h2.subjectline {
+  white-space: normal; /* this makes the "title" of the list wrap to the next line */
+}

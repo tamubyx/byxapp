@@ -1,28 +1,10 @@
 <ion-view view-title="News">
   <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-divider">Announcement 1</div>
-      <div class="item item-body">
-        <div>
-        This is an announcement.
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Announcement 2</div>
-      <div class="item item-body">
-        <div>
-          This is another Announcement
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Matt</div>
-      <div class="item item-body">
-        <div>
-          Matt is a loser
-        </div>
-      </div>
+    <div class="list">
+      <a class="item" href="@url" target="_blank" ng-repeat="@item in array">
+        <h2 class="subjectline">@Subject</h2>
+        <p>@content</p>
+      </a>
     </div>
   </ion-content>
 </ion-view>
