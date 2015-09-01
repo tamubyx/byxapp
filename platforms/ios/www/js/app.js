@@ -53,7 +53,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-cal': {
         templateUrl: 'templates/tab-cal.html',
-      //  controller: 'NewsCtrl'
+      //  controller: 'TabCtrl'
       }
     }
   })
