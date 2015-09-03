@@ -1,14 +1,9 @@
-// Ionic Starter App
+(function() {
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
+var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-.run(function($ionicPlatform) {
+app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -22,7 +17,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -39,12 +34,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
-  .state('tab.news', {
-    url: '/news',
+  .state('tab.announcements', {
+    url: '/announcements',
     views: {
-      'tab-news': {
-        templateUrl: 'templates/tab-news.html',
-        controller: 'NewsCtrl'
+      'tab-announcements': {
+        templateUrl: 'templates/tab-announcements.html',
+        controller: 'AnnouncmentsCtrl'
       }
     }
   })
@@ -79,19 +74,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-.state('tab.account', {
-    url: '/account',
+.state('tab.more', {
+    url: '/more',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-more': {
+        templateUrl: 'templates/tab-more.html',
+        controller: 'MoreCtrl'
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/news');
+  $urlRouterProvider.otherwise('/tab/announcements');
   //$urlRouterProvider.otherwise('/');
 
 
 });
+
+}());

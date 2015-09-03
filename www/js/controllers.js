@@ -1,6 +1,17 @@
 angular.module('starter.controllers', [])
 
-.controller('NewsCtrl', function($scope) {})
+.controller('AnnouncmentsCtrl', function($http, $scope) {
+
+  $scope.stories = [];
+  //$http.get('https://www.reddit.com/r/christianity/new/.json')
+  $http.get('http://kylearob.blogspot.com/feeds/posts/default?alt=json')
+  .success(function(response) {
+    angular.forEach(response.data.children, function(child) {
+    $scope.stories.push(child.data);
+    });
+  });
+})
+
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
@@ -21,7 +32,7 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('MoreCtrl', function($scope) {
  $scope.shouldShowDelete = false;
  $scope.shouldShowReorder = false;
  $scope.listCanSwipe = true

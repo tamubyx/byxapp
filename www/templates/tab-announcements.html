@@ -1,0 +1,13 @@
+<ion-view view-title="Announcments">
+  <ion-content class="padding" ng-controller="AnnouncmentsCtrl">
+    <div class="list">
+      <a class="item item-thumbnail-left"
+      href="{{story.url}}" target="_blank"
+      ng-repeat="story in stories"
+      img ng-src="{{story.thumbnail}}">
+        <h2 class="subjectline">{{story.title}}</h2>
+        <p>{{story.domain}}</p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
